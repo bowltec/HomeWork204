@@ -48,7 +48,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CrW-0J-fPW">
                                                 <rect key="frame" x="98" y="0.0" width="286" height="31"/>
                                                 <connections>
-                                                    <action selector="redLightSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="kNR-uT-BsT"/>
+                                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="2j4-pf-EIy"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -77,7 +77,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v6a-74-dwe">
                                                 <rect key="frame" x="98" y="0.0" width="286" height="31"/>
                                                 <connections>
-                                                    <action selector="greenLightSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="X2O-dk-PeL"/>
+                                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="v3p-z4-NLp"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -106,7 +106,7 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9jb-8X-nQY">
                                                 <rect key="frame" x="98" y="0.0" width="286" height="31"/>
                                                 <connections>
-                                                    <action selector="blueLightSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="dyx-Ko-bFm"/>
+                                                    <action selector="sliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="oGH-xy-r9u"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -128,18 +128,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueLightScale" destination="5J5-pa-loe" id="dMK-jj-NNh"/>
-                        <outlet property="blueLightSetting" destination="9jb-8X-nQY" id="ge5-3Z-ZDj"/>
-                        <outlet property="greenLightScale" destination="Jls-Gg-SYI" id="efl-IG-XP4"/>
-                        <outlet property="greenLightSetting" destination="v6a-74-dwe" id="Ag0-mD-jlf"/>
-                        <outlet property="redLightScale" destination="21H-t5-nKz" id="kkc-tE-ZqI"/>
-                        <outlet property="redLightSetting" destination="CrW-0J-fPW" id="6j5-wd-gFv"/>
+                        <outlet property="blueLabel" destination="5J5-pa-loe" id="dMK-jj-NNh"/>
+                        <outlet property="blueSlider" destination="9jb-8X-nQY" id="VDN-oE-kp5"/>
+                        <outlet property="greenLabel" destination="Jls-Gg-SYI" id="efl-IG-XP4"/>
+                        <outlet property="greenSlider" destination="v6a-74-dwe" id="nbo-bk-lAb"/>
+                        <outlet property="redLabel" destination="21H-t5-nKz" id="kkc-tE-ZqI"/>
+                        <outlet property="redSlider" destination="CrW-0J-fPW" id="Klw-5K-AZX"/>
                         <outlet property="resultRGBView" destination="9yp-eU-Tf2" id="m1i-uB-t71"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55.725190839694655" y="-12.67605633802817"/>
+            <point key="canvasLocation" x="412" y="-120"/>
         </scene>
     </scenes>
     <resources>

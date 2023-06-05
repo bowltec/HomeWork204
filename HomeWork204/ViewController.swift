@@ -12,76 +12,58 @@ class ViewController: UIViewController {
 // MARK: - IBOutlets
     @IBOutlet var resultRGBView: UIView!
     
-    @IBOutlet var redLightScale: UILabel!
-    @IBOutlet var greenLightScale: UILabel!
-    @IBOutlet var blueLightScale: UILabel!
+    @IBOutlet var redLabel: UILabel!
+    @IBOutlet var greenLabel: UILabel!
+    @IBOutlet var blueLabel: UILabel!
     
-    @IBOutlet var redLightSetting: UISlider!
-    @IBOutlet var greenLightSetting: UISlider!
-    @IBOutlet var blueLightSetting: UISlider!
-    
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        redLightSliderAction()
-        greenLightSliderAction()
-        blueLightSliderAction()
+        resultRGBView.layer.cornerRadius = 20
         
-        setupResultView()
-        
-        setupRedSlider()
-        setupGreenSlider()
-        setupBlueSlider()
-        
+        setup(slider: redSlider)
+        setup(slider: greenSlider)
+        setup(slider: blueSlider)
+        setupLabels()
+        setupView()
     }
     
 // MARK: - IBActions
-    @IBAction func redLightSliderAction() {
-        redLightScale.text = Double(round(100 * redLightSetting.value) / 100).formatted()
+    @IBAction func sliderAction() {
+        setupLabels()
+        setupView()
     }
-    
-    @IBAction func greenLightSliderAction() {
-        greenLightScale.text = Double(round(100 * greenLightSetting.value) / 100).formatted()
-    }
-    
-    @IBAction func blueLightSliderAction() {
-        blueLightScale.text = Double(round(100 * blueLightSetting.value) / 100).formatted()
-    }
+
     
 // MARK: - Private Methods
-    private func setupResultView() {
-        resultRGBView.layer.cornerRadius = 20
-        resultRGBView.backgroundColor = .black
+    private func setupView() {
+        resultRGBView.backgroundColor = UIColor(red: CGFloat(redSlider.value),
+                                                green: CGFloat(greenSlider.value),
+                                                blue: CGFloat(blueSlider.value),
+                                                alpha: 1)
     }
     
-    private func setupRedSlider() {
-        redLightSetting.value = 0.5
-        redLightSetting.minimumValue = 0.0
-        redLightSetting.maximumValue = 1
-        redLightSetting.minimumTrackTintColor = .red
-        redLightSetting.maximumTrackTintColor = .darkGray
-        redLightSetting.thumbTintColor = .black
+    private func setupLabels() {
+        redLabel.text = (round(100 * redSlider.value) / 100).formatted()
+        greenLabel.text = (round(100 * greenSlider.value) / 100).formatted()
+        blueLabel.text = (round(100 * blueSlider.value) / 100).formatted()
     }
     
-    private func setupGreenSlider() {
-        greenLightSetting.value = 0.5
-        greenLightSetting.minimumValue = 0.0
-        greenLightSetting.maximumValue = 1.0
-        greenLightSetting.minimumTrackTintColor = .green
-        greenLightSetting.maximumTrackTintColor = .darkGray
-        greenLightSetting.thumbTintColor = .black
+    private func setup(slider: UISlider) {
+        switch slider {
+        case redSlider:
+            slider.minimumTrackTintColor = .red
+        case greenSlider:
+            slider.minimumTrackTintColor = .green
+        default:
+            slider.minimumTrackTintColor = .blue
+        }
+        slider.maximumTrackTintColor = .darkGray
+        slider.thumbTintColor = .black
     }
-    
-    private func setupBlueSlider() {
-        blueLightSetting.value = 0.5
-        blueLightSetting.minimumValue = 0.0
-        blueLightSetting.maximumValue = 1.0
-        blueLightSetting.minimumTrackTintColor = .blue
-        blueLightSetting.maximumTrackTintColor = .darkGray
-        blueLightSetting.thumbTintColor = .black
-    }
-    
 
 }
-
